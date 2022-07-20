@@ -99,20 +99,19 @@ M.comment = function()
 end
 
 M.luasnip = function()
-    local present, luasnip = pcall(require, "luasnip")
-
+    local present, ls = pcall(require, "luasnip")
     if not present then
         return
     end
 
-    local options = {
+    ls.config.set_config {
         history = true,
         updateevents = "TextChanged,TextChangedI",
+        enableAutoSnippets = true,
     }
-
-    options = load_override(options, "L3MON4D3/LuaSnip")
-    luasnip.config.set_config(options)
     require("luasnip.loaders.from_vscode").lazy_load()
+
+    -- ls.sni
 end
 
 M.gitsigns = function()

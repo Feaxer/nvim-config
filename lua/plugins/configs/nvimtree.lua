@@ -12,11 +12,16 @@ local options = {
     },
     disable_netrw = true,
     hijack_netrw = true,
-    open_on_setup = false,
+    open_on_setup = true,
     ignore_ft_on_setup = { "alpha" },
     hijack_cursor = true,
     hijack_unnamed_buffer_when_opening = false,
     update_cwd = true,
+    create_in_closed_folder = true,
+    filesystem_watchers = {
+        enable = true,
+        interval = 1000,
+    },
     update_focused_file = {
         enable = true,
         update_cwd = false,
@@ -33,6 +38,7 @@ local options = {
     actions = {
         open_file = {
             resize_window = true,
+            quit_on_open = true,
         },
     },
     renderer = {
