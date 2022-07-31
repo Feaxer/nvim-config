@@ -30,6 +30,11 @@ M.general = {
 
         ["<leader>n"] = { "<cmd> set nu! <CR>", "   toggle line number" },
         ["<leader>rn"] = { "<cmd> set rnu! <CR>", "   toggle relative number" },
+        ["<leader>pi"] = { "<cmd> PackerInstall <CR>", "Packer install" },
+        ["<leader>pc"] = { "<cmd> PackerCompile <CR>", "Packer compile" },
+
+        ["<leader>zm"] = { "<cmd> ZenMode <CR>", "Open in ZenMode" },
+        ["<leader>cl"] = { "<cmd> ColorizerReloadAllBuffers <cr>", "Colorizer reload" },
     },
 
     t = {
@@ -107,20 +112,19 @@ M.telescope = {
     },
 }
 
-local nvterm = require "nvterm.terminal"
 M.nvterm = {
     t = {
-        ["<A-i>"] = { function() nvterm.toggle "float" end, "   toggle floating term", },
-        ["<A-h>"] = { function() nvterm.toggle "horizontal" end, "   toggle horizontal term", },
-        ["<A-v>"] = { function() nvterm.toggle "vertical" end, "   toggle vertical term", },
+        ["<A-i>"] = { function() require("nvterm.terminal").toggle "float" end, "   toggle floating term", },
+        ["<A-h>"] = { function() require("nvterm.terminal").toggle "horizontal" end, "   toggle horizontal term", },
+        ["<A-v>"] = { function() require("nvterm.terminal").toggle "vertical" end, "   toggle vertical term", },
     },
 
     n = {
-        ["<A-i>"] = { function() nvterm.toggle "float" end, "   toggle floating term", },
-        ["<A-h>"] = { function() nvterm.toggle "horizontal" end, "   toggle horizontal term", },
-        ["<A-v>"] = { function() nvterm.toggle "vertical" end, "   toggle vertical term", },
-        ["<leader>h"] = { function() nvterm.new "horizontal" end, "   new horizontal term", },
-        ["<leader>v"] = { function() nvterm.new "vertical" end, "   new vertical term", },
+        ["<A-i>"] = { function() require("nvterm.terminal").toggle "float" end, "   toggle floating term", },
+        ["<A-h>"] = { function() require("nvterm.terminal").toggle "horizontal" end, "   toggle horizontal term", },
+        ["<A-v>"] = { function() require("nvterm.terminal").toggle "vertical" end, "   toggle vertical term", },
+        ["<leader>h"] = { function() require("nvterm.terminal").new "horizontal" end, "   new horizontal term", },
+        ["<leader>v"] = { function() require("nvterm.terminal").new "vertical" end, "   new vertical term", },
     },
 }
 

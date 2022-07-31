@@ -135,6 +135,7 @@ M.gitsigns = function()
 
     options = load_override(options, "lewis6991/gitsigns.nvim")
     gitsigns.setup(options)
+    -- vim.cmd [[Gitsigns disable]]
 end
 
 M.devicons = function()

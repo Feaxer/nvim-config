@@ -20,7 +20,6 @@ local options = {
     create_in_closed_folder = true,
     filesystem_watchers = {
         enable = true,
-        interval = 1000,
     },
     update_focused_file = {
         enable = true,

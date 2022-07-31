@@ -59,7 +59,15 @@ local options = {
         },
     },
 
-    extensions_list = { "themes", "terms" },
+    extensions = {
+        fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case",
+        },
+    },
+    extensions_list = { "themes", "terms", "fzf" },
 }
 
 -- check for any override
@@ -67,7 +75,6 @@ options = require("core.utils").load_override(options, "nvim-telescope/telescope
 telescope.setup(options)
 
 -- load extensions
-
 -- pcall(function()
 for _, ext in ipairs(options.extensions_list) do
     print(ext)
